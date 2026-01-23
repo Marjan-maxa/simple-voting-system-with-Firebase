@@ -3,6 +3,8 @@ import 'package:project_firebase/main.dart';
 import 'package:project_firebase/task_manager.dart';
 import 'package:project_firebase/vote_screen.dart';
 
+import 'notification_demo.dart';
+
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
 
@@ -12,7 +14,7 @@ class Myapp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'BD Voting',
-      home: TaskManager(),
+      home: NotificationDemo(),
     );
   }
 }
