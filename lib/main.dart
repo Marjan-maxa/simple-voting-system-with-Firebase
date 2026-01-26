@@ -12,7 +12,7 @@ import 'local_notification.dart';
 import 'myapp.dart';
 
  final GlobalKey<NavigatorState> navigatorKey=GlobalKey<NavigatorState>();
- main() async{
+main() async{
 
   WidgetsFlutterBinding.ensureInitialized();
   tz.initializeTimeZones();
@@ -28,9 +28,13 @@ import 'myapp.dart';
       AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(scheduleChannel);
 
-  await Firebase.initializeApp(
-   options: DefaultFirebaseOptions.currentPlatform,
-  );
+  try {
+   await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+   );
+  } catch (e) {
+   print('Firebase already initialized: $e');
+  }
  await NotificationService.initialize();
 
 

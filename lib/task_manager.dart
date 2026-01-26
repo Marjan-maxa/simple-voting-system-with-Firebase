@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:project_firebase/login_screen.dart';
 
 class TaskManager extends StatelessWidget {
    TaskManager({super.key});
@@ -93,6 +94,11 @@ class TaskManager extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+          }, icon: Icon(Icons.logout))
+        ],
         centerTitle: true ,
         backgroundColor: Colors.blue,
         title: Text('Task Manager',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),

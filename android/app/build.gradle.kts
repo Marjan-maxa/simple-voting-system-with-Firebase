@@ -47,6 +47,8 @@ android {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.2.0")
 
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_firebase/login_screen.dart';
 import 'package:project_firebase/main.dart';
 import 'package:project_firebase/task_manager.dart';
 import 'package:project_firebase/vote_screen.dart';
@@ -14,7 +15,7 @@ class Myapp extends StatelessWidget {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'BD Voting',
-      home: NotificationDemo(),
+      home: LoginScreen(),
     );
   }
 }
