@@ -84,9 +84,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       foregroundColor: Colors.white
                     ),
                       onPressed: () async {
-                     await AuthService().login(emailController.text, passwardController.text);
+                    final usereVarified= await AuthService().login(emailController.text, passwardController.text);
+                    if(usereVarified!.emailVerified){
+
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>TaskManager()));
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login Successfully!')));
+
+                    }else{
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('please verified your email..!')));
+
+                    }
 
                       }, child: Text('Login')
                   ),

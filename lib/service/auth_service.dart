@@ -9,6 +9,7 @@ class AuthService{
   // sign up method
   Future<User?>signUp(String email,String password) async {
    final result=await  _auth.createUserWithEmailAndPassword(email: email, password: password);
+   result.user!.sendEmailVerification();
    return result.user;
   }
 
